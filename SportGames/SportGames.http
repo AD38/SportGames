@@ -1,6 +1,0 @@
-@SportGames_HostAddress = http://localhost:5296
-
-GET {{SportGames_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

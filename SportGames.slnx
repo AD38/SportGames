@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SportGames.Api/SportGames.Api.csproj" />
+  <Project Path="SportGames.Collector/SportGames.Collector.csproj" />
+  <Project Path="SportGames.Core/SportGames.Core.csproj" />
+</Solution>

@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SportGames.Application\SportGames.Application.csproj" />
+    <ProjectReference Include="..\SportGames.Collector\SportGames.Collector.csproj" />
     <ProjectReference Include="..\SportGames.Core\SportGames.Core.csproj" />
   </ItemGroup>
 

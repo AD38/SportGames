@@ -1,5 +1,7 @@
 <Solution>
   <Project Path="SportGames.Api/SportGames.Api.csproj" />
+  <Project Path="SportGames.Application/SportGames.Application.csproj" Id="78609c8f-14e0-4137-afe5-94ebe352af86" />
+  <Project Path="SportGames.Collector.Api/SportGames.Collector.Api.csproj" Id="3457874c-a145-4f05-9fb8-6d069ed372d4" />
   <Project Path="SportGames.Collector/SportGames.Collector.csproj" />
   <Project Path="SportGames.Core/SportGames.Core.csproj" />
 </Solution>

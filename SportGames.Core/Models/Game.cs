@@ -1,6 +1,6 @@
 ﻿namespace SportGames.Core.Models;
 
-public record Game(string Id, DateTime StartTime, SportType SportType, string CompetitionName, TeamPair TeamPair)
+public record Game(Guid Id, DateTime StartTime, SportType SportType, string CompetitionName, TeamPair TeamPair)
 {
     public string GetNormalizedKey()
     {

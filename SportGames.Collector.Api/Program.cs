@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Scalar.AspNetCore;
+using SportGames.Application;
+using SportGames.Collector;
 using SportGames.Core.Interfaces;
 using SportGames.Core.Models;
 
@@ -8,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddHostedService<Worker>();
+builder.Services.AddHostedApplication();
 
 var app = builder.Build();
 
@@ -21,26 +25,13 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapGet("/games", async (
-    SportType? sportType,
-    string? competition,
-    DateTime? from,
-    DateTime? to,
-    int pageNumber,
-    int pageSize,
     [FromServices] IGameRepository repository,
     CancellationToken cancellationToken) =>
-    {
-        var query = new GameQuery(
-            sportType,
-            competition,
-            from,
-            to,
-            pageNumber,
-            pageSize);
+{
+    var games = await repository.GetAll(cancellationToken);
 
-        var games = await repository.Get(query, cancellationToken);
-
-        return Results.Ok(games);
-    });
+    return Results.Ok(games);
+});
 
 app.Run();
+

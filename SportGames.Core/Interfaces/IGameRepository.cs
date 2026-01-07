@@ -5,6 +5,6 @@ namespace SportGames.Core.Interfaces;
 public interface IGameRepository
 {
     Task Save(IReadOnlyList<Game> games, CancellationToken cancellationToken);
-    Task<Game> GetAll(CancellationToken cancellationToken);
-    Task<Game> Get(GameQuery query, CancellationToken cancellationToken);
+    Task<IEnumerable<Game>> GetAll(CancellationToken cancellationToken);
+    Task<IEnumerable<Game>> Get(GameQuery query, CancellationToken cancellationToken);
 }
